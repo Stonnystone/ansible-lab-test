@@ -1,0 +1,16 @@
+- hosts: [webserver]
+  tasks:
+    - name: start apache server
+      service:
+          name: apache
+          state: started
+      become: yes
+   
+- hosts: [lb]
+  tasks:
+    - name: start nginx server
+      service:
+          name: nginx
+          state: started
+      become: yes
+   
